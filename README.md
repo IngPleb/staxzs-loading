@@ -1,6 +1,6 @@
 # STAXZS-Loading
 
-Simple yet mesmerizing loading screen for your FiveM server.
+Simple yet mesmerizing loading screen for your FiveM server with tile effects!
 
 ## Installation
 
