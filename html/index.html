@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta id="viewport" name="viewport"
+        content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" />
+    <script src="app.js" defer></script>
+</head>
+<!-- This is where you want to replace with your audio -->
+
+<audio autoplay loop id="audio" src="../assets/solas.mp3" volume="0.4"></audio>
+
+<body class="unselectable">
+    <div id="container">
+        <div class="tile"></div>
+
+        <header>
+            <img id="logo" src="../assets/staxzs_logo.png" alt="STAXZS' logo" draggable="false">
+            <h1 id="title">STAXZS</h1>
+        </header>
+
+        <!-- Socials -->
+
+        <!-- TODO: Add links -->
+        <img id="discord" class="social" onclick="openURL('https://discord.com/invite/hmVZfaXDkq')" src="../assets/socials/discord.svg" alt="" draggable="false">
+        <img id="tiktok" class="social" onclick="openURL('https://blackscreen.app')" src="../assets/socials/tiktok.svg" alt="" draggable="false">
+        <img id="youtube" class="social" onclick="openURL('https://blackscreen.app')" src="../assets/socials/youtube.svg" alt="" draggable="false">
+        <img id="instagram" class="social" onclick="openURL('https://blackscreen.app')" src="../assets/socials/instagram.svg" alt="" draggable="false">
+
+      </div>   
+
+    <!-- Mute/unmute button -->
+    <div class="unmuted toggle-sound" href="#">
+        <div class="tooltip--left sound" data-tooltip="Turn On/Off Sound">
+            <div class="sound--icon fa fa-volume-off"></div>
+            <div class="sound--wave sound--wave_one"></div>
+            <div class="sound--wave sound--wave_two"></div>
+            <div class="sound--wave sound--wave_three"></div>
+        </div>
+    </div> 
+</body>
+
+</html>

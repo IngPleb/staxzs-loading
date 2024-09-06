@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Utility */
+
+:root {
+    --red-rgb: 89 140 228;
+    /* Soft blue */
+    --blue-rgb: 30 144 255;
+    /* Dodger blue */
+    --green-rgb: 70 130 180;
+    /* Steel blue */
+    --yellow-rgb: 173 216 230;
+    /* Light blue */
+
+    --background-rgb: 0 0 0;
+}
+
+.unselectable {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Styles */
+/* ************* */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--background-rgb));
+    overflow: hidden;
+    perspective: 2000px;
+}
+
+header {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    z-index: 99;
+}
+
+#logo {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #fff;
+
+    margin-top: 2.8vh;
+    letter-spacing: 1.8vh;
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    /* It just looks so weird without it, idk why, maybe I am just going crazy -IngPleb */
+    transform: translateX(0.85vh);
+}
+
+/* Socials */
+
+.social {
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.social:hover {
+    transform: scale(1.3) translateY(-20px);
+}
+
+#discord {
+    top: 65%;
+    left: 30%;
+}
+
+#tiktok {
+    top: 60%;
+    right: 25%;
+}
+
+
+#youtube {
+    top: 25%;
+    right: 35%;
+
+    /* The actual SVG isn't a rounded rectangle */
+    border-radius: 25% !important;
+}
+
+#instagram {
+    top: 35%;
+    left: 20%;
+}
+
+/* Background */
+/* ************ */
+#container {
+    width: 140rem;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-rows: repeat(40, 1fr);
+    grid-template-columns: repeat(40, 1fr);
+    position: absolute;
+    transform: translateX(-700px);
+    transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
+    transform-style: preserve-3d;
+}
+
+
+#container:after,
+#container:before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    pointer-events: none;
+}
+
+#container:before {
+    z-index: 2;
+    background-image: url("../assets/plus.png");
+    background-size: 5%;
+    background-repeat: repeat;
+    opacity: 0.25;
+}
+
+#container:after {
+    z-index: 3;
+    background: radial-gradient(circle, transparent 25%, rgb(var(--background-rgb)) 80%);
+}
+
+.tile {
+
+    transition: background-color 1500ms;
+
+    transform: translateY(167px);
+}
+
+.tile:hover {
+    transition-duration: 0ms;
+}
+
+.tile:nth-child(4n):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(4n + 1):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(4n + 2):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(4n + 3):hover {
+    background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(7n + 3):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(7n + 5):hover {
+    background-color: rgb(var(--yellow-rgb));
+}
+
+.tile:nth-child(7n + 6):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 1):hover {
+    background-color: rgb(var(--red-rgb));
+}
+
+.tile:nth-child(11n + 4):hover {
+    background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(11n + 7):hover {
+    background-color: rgb(var(--green-rgb));
+}
+
+.tile:nth-child(11n + 10):hover {
+    background-color: rgb(var(--yellow-rgb));
+}
+
+/* Sound */
+
+.toggle-sound {
+    position: fixed;
+    top: 5%;
+    left: 2.5%;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99;
+
+    background-color: rgb(17, 21, 23);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 200ms;
+}
+
+.toggle-sound.sound-mute {
+    box-shadow: none;
+}
+
+.sound {
+    width: 97%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    margin-left: -15%;
+}
+
+.sound--icon {
+    color: inherit;
+    line-height: inherit;
+    font-size: 1.6rem;
+    display: block;
+    margin: auto;
+    text-align: left;
+    margin-top: 16px;
+    margin-right: 6px;
+}
+
+.sound--wave {
+    position: absolute;
+    border: 2px solid transparent;
+    border-right: 2px solid #fff;
+    border-radius: 50%;
+    transition: all 200ms;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+}
+
+.sound--wave_one {
+    width: 45%;
+    height: 40%;
+}
+
+.sound--wave_two {
+    width: 70%;
+    height: 62%;
+}
+
+.sound--wave_three {
+    width: 95%;
+    height: 75%;
+}
+
+.sound-mute .sound--wave {
+    border-radius: 0;
+    width: 35%;
+    height: 35%;
+    border-width: 0 2px 0 0;
+    left: 5px;
+}
+
+.sound-mute .sound--wave_one {
+    -webkit-transform: rotate(45deg) translate3d(0, -50%, 0);
+    transform: rotate(45deg) translate3d(0, -50%, 0);
+}
+
+.sound-mute .sound--wave_two {
+    -webkit-transform: rotate(-45deg) translate3d(0, 50%, 0);
+    transform: rotate(-45deg) translate3d(0, 50%, 0);
+}
+
+.sound-mute .sound--wave_three {
+    opacity: 0;
+    transform: translateX(-46%);
+    height: 20%;
+
+}
