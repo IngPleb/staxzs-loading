@@ -8,7 +8,7 @@
 		<stop  offset="0" style="stop-color:#E52D27"/>
 		<stop  offset="1" style="stop-color:#BF171D"/>
 	</linearGradient>
-	<rect fill="url(#SVGID_1_)" width="400" height="400"/>
+	<rect fill="url(#SVGID_1_)" width="400" height="400" rx="100" ry="100"/>
 </g>
 <g id="Logo">
 	<path id="The_Sharpness" opacity="0.12" d="M170.6,159.9l63.9,42.7l9-4.6L170.6,159.9z"/>

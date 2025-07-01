@@ -104,9 +104,6 @@ header {
 #youtube {
     top: 25%;
     right: 35%;
-
-    /* The actual SVG isn't a rounded rectangle */
-    border-radius: 25% !important;
 }
 
 #instagram {
